@@ -1,0 +1,9 @@
+---
+
+- login_email : your_mail@domain.com
+  login_passwd: your_password
+  secret_token: authentication token
+
+- login_email : your_mail@domain.com
+  login_passwd: your_password
+  secret_token: authentication token
