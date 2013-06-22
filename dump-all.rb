@@ -21,7 +21,7 @@ def padding_zero(num, bits = 6)
     num = num.to_s
     while num.size < bits
         num = "0#{num}"
-        return num.padding_zero(bits)
+        return padding_zero(bits)
     end
     return num
 end
