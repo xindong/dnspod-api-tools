@@ -43,10 +43,6 @@ def request_api(https, uri, totp, data = {})
     return json
 end
 
-def get_login_code(secret_token)
-    hotp = ROTP::HOTP.new("base32secretkey3232")
-end
-
 FileUtils.chdir(File.expand_path(File.dirname(__FILE__)))
 
 uri = URI.parse('https://dnsapi.cn')
@@ -66,7 +62,6 @@ uri = URI.parse('https://dnsapi.cn')
             'login_remember' => 'no'
         }
         @http_request_opts = { 'User-Agent' => 'XINDONG DNSPod Script' }
-        @login_code = ARGV[0]
         @cookies = {}
         totp = ROTP::TOTP.new(account['secret_token']) if account.has_key?('secret_token')
         json = request_api(https, '/Domain.list', totp)
